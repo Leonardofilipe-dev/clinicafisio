@@ -12,7 +12,7 @@ class FisioterapeutaController {
     }
 
     static async listar(req, res){
-        try {
+        try  {
             res.send("Olá")  
         } catch (error) {
             console.log(error)
@@ -20,7 +20,7 @@ class FisioterapeutaController {
     }
 
     static async buscar(req, res){
-        try {
+        try  {
             res.send("Olá")  
         } catch (error) {
             console.log(error)
@@ -28,7 +28,7 @@ class FisioterapeutaController {
     }
 
     static async deletar(req, res){
-        try {
+        try  {
             res.send("Olá")  
         } catch (error) {
             console.log(error)
@@ -36,7 +36,7 @@ class FisioterapeutaController {
     }
 
     static async atualizar(req, res){
-        try {
+        try  {
             res.send("Olá")  
         } catch (error) {
             console.log(error)
