@@ -21,7 +21,6 @@ const FisioterapeutaScrema = new mongoose.Schema({
         required: true
     }
 })
-
 const Fisioterapeuta = mongoose.model("Fisioterapeuta", FisioterapeutaScrema)
 
 export default Fisioterapeuta
