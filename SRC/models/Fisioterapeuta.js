@@ -15,11 +15,7 @@ const FisioterapeutaScrema = new mongoose.Schema({
         trim: true,
         required: true
     },
-    relatorio:{
-        type: String,
-        trim: true,
-        required: true
-    }
+ 
 })
 const Fisioterapeuta = mongoose.model("Fisioterapeuta", FisioterapeutaScrema)
 
