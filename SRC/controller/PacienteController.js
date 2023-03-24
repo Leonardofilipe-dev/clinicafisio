@@ -4,9 +4,9 @@ import Paciente from "../models/Paciente.js"
 class PacienteController {
     static async cadastrar(req, res){
         try {
-            const { nome, email, senha, prontuario } = req.body
+            const { nome, dataNascimento, prontuario } = req.body
             let novoPaciente = new Paciente({
-                nome, email, senha, prontuario
+                nome, dataNascimento, prontuario
             })
 
             const resultado = await novoPaciente.save()
@@ -52,9 +52,9 @@ class PacienteController {
     static async atualizar(req, res){
         try  {
             const id = req.params.id
-            const { nome, email, senha, prontuario } = req.body
+            const { nome, dataNascimento, prontuario } = req.body
             const pacienteAtualizado = await Paciente.findByIdAndUpdate(id,
-                 { nome, email, senha, prontuario })
+                 { nome, dataNascimento, prontuario })
             return res.status(200).json(pacienteAtualizado)
 
         } catch (error) {
