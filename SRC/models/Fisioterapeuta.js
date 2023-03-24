@@ -1,21 +1,20 @@
 import mongoose from "mongoose";
 
 const FisioterapeutaScrema = new mongoose.Schema({
-    nome:{
+    nome: {
         type: String,
         trim: true
     },
-    email:{
-        type: String,
-        trim:true,
-        required:true
-    },
-    senha:{
+    email: {
         type: String,
         trim: true,
-        required: true
+        //required: true
     },
- 
+    senha: {
+        type: String,
+        trim: true,
+        //required: true
+    },
 })
 const Fisioterapeuta = mongoose.model("Fisioterapeuta", FisioterapeutaScrema)
 
