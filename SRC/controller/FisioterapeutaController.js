@@ -1,12 +1,16 @@
 import Fisioterapeuta from "../models/Fisioterapeuta.js"
+import bcrypt from "bcryptjs"
 
 
 class FisioterapeutaController {
     static async cadastrar(req, res){
         try {
-            const { nome, email, senha } = req.body
+            const { nome, email, senha} = req.body
+            const newSenha = bcrypt.hashSync(senha, 10)
             let novoFisioterapeuta = new Fisioterapeuta({
-                nome, email, senha
+                nome, email, senha: newSenha
+
+                
             })
 
             const resultado = await novoFisioterapeuta.save()
@@ -16,6 +20,22 @@ class FisioterapeutaController {
         }
         
     }
+        static async cadastrarAdm(req, res) {
+        try {
+            const { nome, admin, email, senha} = req.body
+            let senhaHash = bcrypt.hashSync(senha)
+            let novoUsuario = new Usuario({
+                nome, admin, email, senha: senhaHash
+            });
+                const resultado = await novoUsuario.save();
+            res.json(resultado)
+
+        } catch (error) {
+            console.log(error)
+            res.json()
+         }
+    }
+    
 
     static async listar(req, res){
         try  {
