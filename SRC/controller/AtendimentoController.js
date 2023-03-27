@@ -20,8 +20,8 @@ class AtendimentoController {
         try {
 
             let atendimento = await Atendimento.find()
-            .populate('fisioterapeutaId')
-            .populate('pacienteId');
+                .populate('fisioterapeutaId')
+                .populate('pacienteId');
             console.log(atendimento)
             return res.status(200).json(atendimento);
         } catch (error) {
@@ -34,8 +34,8 @@ class AtendimentoController {
         try {
             const id = req.params.id
             const atendimento = await Atendimento.findById(id)
-            .populate('fisioterapeutaId')
-            .populate('pacienteId')
+                .populate('fisioterapeutaId')
+                .populate('pacienteId')
             return res.status(200).json(atendimento)
         } catch (error) {
             return res.status(500).json({ error });
