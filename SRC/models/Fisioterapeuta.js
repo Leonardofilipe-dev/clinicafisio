@@ -8,12 +8,12 @@ const FisioterapeutaScrema = new mongoose.Schema({
     email: {
         type: String,
         trim: true,
-        //required: true
+        required: true
     },
     senha: {
         type: String,
         trim: true,
-        //required: true
+        required: true
     },
 })
 const Fisioterapeuta = mongoose.model("Fisioterapeuta", FisioterapeutaScrema)

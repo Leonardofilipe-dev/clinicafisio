@@ -1,24 +1,24 @@
 import mongoose from "mongoose";
 
 const PacienteScrema = new mongoose.Schema({
-    nome:{
+    nome: {
         type: String,
         trim: true
     },
-    dataNascimento:{
+    dataNascimento: {
         type: Date,
-        trim:true,
-       
+        trim: true,
+
     },
-    prontuario:{
+    prontuario: {
         type: String
     },
 
-    Fisioterapeuta:{
+    Fisioterapeuta: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "fisioterapeuta"
-        }
- 
+    }
+
 })
 const Paciente = mongoose.model("Paciente", PacienteScrema)
 
