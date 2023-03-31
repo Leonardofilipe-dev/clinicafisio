@@ -22,12 +22,12 @@ class FisioterapeutaController {
     }
     static async cadastrarAdm(req, res) {
         try {
-            const { nome, admin, email, senha } = req.body
+            const { nome, email, senha, admin } = req.body
             let senhaHash = bcrypt.hashSync(senha)
-            let novoUsuario = new Usuario({
-                nome, admin, email, senha: senhaHash
+            let novoAdmin = new Fisioterapeuta({
+                nome, email, senha: senhaHash, admin
             });
-            const resultado = await novoUsuario.save();
+            const resultado = await novoAdmin.save();
             res.json(resultado)
 
         } catch (error) {

@@ -15,6 +15,11 @@ const FisioterapeutaScrema = new mongoose.Schema({
         trim: true,
         required: true
     },
+    admin:{
+        type: Boolean,
+        trim: true,
+        required: true
+    }
 })
 const Fisioterapeuta = mongoose.model("Fisioterapeuta", FisioterapeutaScrema)
 
